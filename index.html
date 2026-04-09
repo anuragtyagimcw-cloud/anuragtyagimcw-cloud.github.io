@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PhD researcher investigating how gut microbiome-derived metabolites drive neuroinflammation and contribute to Alzheimer's and Parkinson's disease. Working in Dr. John Kirby's lab.">
+<title>[Your Name] — Gut–Brain Axis Researcher</title>
+<style>
+  /* ── Reset & Base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --teal:    #1D9E75;
+    --teal-lt: #E1F5EE;
+    --teal-dk: #085041;
+    --gray:    #f7f7f5;
+    --border:  #e4e4e0;
+    --text:    #1a1a18;
+    --muted:   #666660;
+    --nav-h:   60px;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--text);
+    background: #fff;
+  }
+  a { color: var(--teal); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ── Nav ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    height: var(--nav-h);
+    display: flex; align-items: center;
+  }
+  .nav-inner {
+    max-width: 900px; margin: 0 auto; padding: 0 1.5rem;
+    width: 100%;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-name { font-size: 15px; font-weight: 600; color: var(--text); }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a { font-size: 13px; color: var(--muted); }
+  .nav-links a:hover { color: var(--teal); text-decoration: none; }
+
+  /* ── Layout ── */
+  .page { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+  section { padding: 5rem 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--teal);
+    margin-bottom: .75rem;
+  }
+  h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 700; line-height: 1.2; }
+  h2 { font-size: 24px; font-weight: 600; margin-bottom: 1rem; }
+  h3 { font-size: 18px; font-weight: 600; margin-bottom: .5rem; }
+  p  { margin-bottom: 1rem; color: #333; }
+  p:last-child { margin-bottom: 0; }
+
+  /* ── Hero ── */
+  #home { padding-top: 6rem; }
+  .hero-sub {
+    font-size: 15px; color: var(--muted); margin: .75rem 0 1.5rem;
+    letter-spacing: .02em;
+  }
+  .hero-body {
+    max-width: 680px;
+    font-size: 17px; line-height: 1.8; color: #444; margin-bottom: 2rem;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 2rem; }
+  .tag {
+    font-size: 12px; padding: 5px 12px; border-radius: 20px;
+    background: var(--teal-lt); color: var(--teal-dk);
+    border: 1px solid #9FE1CB;
+  }
+  .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 10px 22px; border-radius: 6px;
+    font-size: 14px; font-weight: 500; cursor: pointer; transition: opacity .15s;
+  }
+  .btn:hover { opacity: .85; text-decoration: none; }
+  .btn-primary { background: var(--teal); color: #fff; }
+  .btn-outline { border: 1.5px solid var(--border); color: var(--text); background: #fff; }
+
+  /* ── About ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+  .avatar {
+    width: 140px; height: 140px; border-radius: 50%;
+    background: var(--teal-lt); border: 3px solid #9FE1CB;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 42px; font-weight: 700; color: var(--teal-dk);
+  }
+  .about-meta { margin-top: 1rem; }
+  .meta-row { font-size: 13px; color: var(--muted); padding: 4px 0; border-bottom: 1px solid var(--border); }
+  .meta-row:last-child { border-bottom: none; }
+  .meta-label { font-weight: 600; color: var(--text); }
+
+  /* ── Research ── */
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+  .pillar {
+    background: var(--gray); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.5rem;
+  }
+  .pillar-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    background: var(--teal-lt); color: var(--teal-dk);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; margin-bottom: 1rem;
+  }
+  .pillar h3 { font-size: 16px; margin-bottom: .5rem; }
+  .pillar p  { font-size: 14px; color: var(--muted); margin-bottom: .75rem; }
+  .why-matters {
+    font-size: 13px; background: #fff; border-left: 3px solid var(--teal);
+    padding: .6rem .75rem; border-radius: 0 6px 6px 0; color: #444;
+    margin-top: .75rem;
+  }
+  .why-matters strong { color: var(--teal-dk); }
+
+  /* ── Skills ── */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 2rem; }
+  .skill-card {
+    border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem;
+  }
+  .skill-card h3 { font-size: 14px; font-weight: 600; margin-bottom: .75rem; color: var(--teal-dk); }
+  .skill-list { list-style: none; }
+  .skill-list li {
+    font-size: 13px; color: #444; padding: 4px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 6px;
+  }
+  .skill-list li:last-child { border-bottom: none; }
+  .skill-list li::before { content: "·"; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+
+  /* ── Current Work ── */
+  .aims { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .aim {
+    display: flex; gap: 1rem; align-items: flex-start;
+    background: var(--gray); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.25rem;
+  }
+  .aim-num {
+    min-width: 36px; height: 36px; border-radius: 50%;
+    background: var(--teal); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; flex-shrink: 0;
+  }
+  .aim-body h3 { font-size: 15px; font-weight: 600; margin-bottom: .25rem; }
+  .aim-body p  { font-size: 14px; color: var(--muted); margin: 0; }
+  .questions {
+    margin-top: 2rem; background: var(--teal-lt);
+    border: 1px solid #9FE1CB; border-radius: 10px; padding: 1.5rem;
+  }
+  .questions h3 { font-size: 15px; color: var(--teal-dk); margin-bottom: .75rem; }
+  .questions ul { list-style: none; }
+  .questions li { font-size: 14px; color: var(--teal-dk); padding: 4px 0; display: flex; gap: 8px; }
+  .questions li::before { content: "?"; font-weight: 700; flex-shrink: 0; }
+
+  /* ── Vision ── */
+  .vision-body { max-width: 720px; }
+  .vision-body p { font-size: 16px; line-height: 1.8; }
+  .impact {
+    margin-top: 2rem; padding: 1.5rem 2rem;
+    border-left: 4px solid var(--teal); background: var(--gray);
+    border-radius: 0 10px 10px 0;
+    font-size: 16px; font-style: italic; color: #444;
+  }
+
+  /* ── Connect ── */
+  .connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .connect-text p { font-size: 15px; line-height: 1.8; }
+  .contact-box {
+    background: var(--gray); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.5rem;
+  }
+  .contact-name { font-size: 18px; font-weight: 600; margin-bottom: .25rem; }
+  .contact-role { font-size: 14px; color: var(--muted); margin-bottom: 1rem; }
+  .contact-email {
+    display: inline-block; background: var(--teal); color: #fff;
+    padding: 8px 16px; border-radius: 6px; font-size: 14px; margin-bottom: 1.25rem;
+  }
+  .social-links { display: flex; flex-direction: column; gap: 8px; }
+  .social-link {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; color: var(--muted);
+    padding: 8px 12px; border: 1px solid var(--border);
+    border-radius: 6px; background: #fff;
+    transition: border-color .15s;
+  }
+  .social-link:hover { border-color: var(--teal); color: var(--teal); text-decoration: none; }
+  .social-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center; padding: 2rem 1.5rem;
+    font-size: 12px; color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .about-grid  { grid-template-columns: 1fr; }
+    .connect-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="nav-inner">
+    <span class="nav-name">[Your Name]</span>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#current">Current Work</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="page">
+
+  <!-- ── SECTION 1: HOME ── -->
+  <section id="home">
+    <div class="section-label">PhD Researcher · Gut–Brain Axis</div>
+    <h1>Decoding How the Gut Shapes the Brain — From Microbial Metabolites to Neurodegeneration</h1>
+    <p class="hero-sub">PhD Researcher &nbsp;|&nbsp; Gut–Brain Axis &nbsp;|&nbsp; Microbiome Biology &nbsp;|&nbsp; Neurodegenerative Disease</p>
+    <div class="hero-body">
+      <p>The gut and brain are in constant molecular dialogue — a conversation mediated by trillions of microorganisms and the metabolites they produce. My research investigates how disruptions in this axis contribute to the onset and progression of neurodegenerative diseases such as Alzheimer's and Parkinson's.</p>
+      <p>Working at the intersection of microbiology, immunology, and neuroscience, I combine mechanistic in vitro models with translational animal studies to identify how specific bacterial metabolites alter neuroinflammation and neuronal integrity. My goal is to translate these mechanistic insights into candidate therapeutic or diagnostic targets — moving from the gut to the clinic.</p>
+    </div>
+    <div class="tags">
+      <span class="tag">Gut–Brain Axis</span>
+      <span class="tag">Microbiome</span>
+      <span class="tag">Short-Chain Fatty Acids</span>
+      <span class="tag">Neuroinflammation</span>
+      <span class="tag">Alzheimer's Disease</span>
+      <span class="tag">Parkinson's Disease</span>
+      <span class="tag">Microbial Metabolomics</span>
+      <span class="tag">Translational Neuroscience</span>
+    </div>
+    <div class="cta-row">
+      <a href="#connect" class="btn btn-primary">Get in touch</a>
+      <a href="#research" class="btn btn-outline">View research →</a>
+    </div>
+  </section>
+
+  <!-- ── SECTION 2: ABOUT ── -->
+  <section id="about">
+    <div class="section-label">About me</div>
+    <div class="about-grid">
+      <div>
+        <div class="avatar">[YN]</div>
+        <div class="about-meta">
+          <div class="meta-row"><span class="meta-label">Position</span><br>PhD Candidate</div>
+          <div class="meta-row"><span class="meta-label">University</span><br>[University Name]</div>
+          <div class="meta-row"><span class="meta-label">Program</span><br>[Program Name]</div>
+          <div class="meta-row"><span class="meta-label">Lab</span><br>Dr. John Kirby's Lab</div>
+        </div>
+      </div>
+      <div>
+        <h2>My scientific journey</h2>
+        <p>My scientific path began with a fascination I couldn't quite name — an instinct that some of the most consequential biology happens not inside the neuron, but in the metabolic and immunological environment surrounding it. That intuition eventually crystallized into a research focus: understanding how the microbial ecosystem of the gut communicates with, and in many cases dysregulates, the central nervous system.</p>
+        <p>I completed my undergraduate training in [Degree, Institution], where I was first introduced to microbiology and host–pathogen interactions. It was during a summer research experience that I encountered the emerging literature on the gut–brain axis — particularly the striking epidemiological data linking gut dysbiosis to early cognitive decline and neuroinflammatory signatures in Parkinson's patients. That literature posed a question I have been chasing ever since: what are the molecular intermediaries between a dysregulated microbiome and a degenerating brain?</p>
+        <p>I am currently pursuing my PhD in [Program Name] at [University], working in the laboratory of Dr. John Kirby. My doctoral research focuses on identifying how bacterial metabolites — particularly short-chain fatty acids, secondary bile acids, and other microbially derived small molecules — modulate neuroinflammatory signaling in the central nervous system.</p>
+        <p>What draws me to this field is not just its scientific novelty — though the gut–brain axis is one of the most rapidly evolving areas in biomedical research — but its clinical urgency. Neurodegenerative diseases currently have no disease-modifying therapies. The gut, an organ we can modulate through diet, probiotics, prebiotics, and targeted interventions, may represent an accessible and underexplored therapeutic lever.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 3: RESEARCH ── -->
+  <section id="research">
+    <div class="section-label">Research focus</div>
+    <h2>Three pillars of inquiry</h2>
+    <p style="max-width:680px;color:var(--muted);">My research sits at the convergence of microbial ecology, metabolic biochemistry, and neurological disease. Below are the three pillars that structure my scientific inquiry.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🧠</div>
+        <h3>The Gut–Brain Axis</h3>
+        <p>Bidirectional communication via the vagus nerve, enteric nervous system, circulating immune mediators, and microbiome-derived metabolites that enter systemic circulation and cross the blood–brain barrier.</p>
+        <div class="why-matters"><strong>Why it matters:</strong> Gut dysbiosis is documented in AD, PD, ALS, and MS — often preceding neurological symptom onset, raising the possibility of a causal gut-originating signal.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">⚗️</div>
+        <h3>Bacterial Metabolites &amp; Neuroimmune Signaling</h3>
+        <p>SCFAs (butyrate, propionate, acetate) act as HDAC inhibitors and GPR41/43 ligands. Secondary bile acids activate TGR5 and FXR receptors now known to be expressed in brain-resident cells.</p>
+        <div class="why-matters"><strong>Why it matters:</strong> Butyrate suppresses microglial activation; propionate alters dopaminergic tone in rodents. The CNS is actively listening to the gut microbiome.</div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🔬</div>
+        <h3>Neurodegeneration — AD &amp; PD</h3>
+        <p>Both diseases involve progressive neuroinflammation and protein aggregation (amyloid-β/tau; α-synuclein) increasingly understood to be modulated by peripheral immune inputs and metabolic signals.</p>
+        <div class="why-matters"><strong>Translational angle:</strong> Identifying causative microbial metabolites opens the door to microbiome-targeted interventions as adjunctive therapies where none currently exist.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: SKILLS ── -->
+  <section id="skills">
+    <div class="section-label">Skills &amp; expertise</div>
+    <h2>Experimental toolkit</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Molecular Biology</h3>
+        <ul class="skill-list">
+          <li>RT-qPCR — neural &amp; immune gene expression</li>
+          <li>Western blotting — low-abundance targets</li>
+          <li>ELISA &amp; Luminex multiplex cytokine assays</li>
+          <li>RNA extraction — brain, intestine, organoids</li>
+          <li>CRISPR-Cas9 — mammalian cell editing</li>
+          <li>Plasmid cloning &amp; recombinant expression</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Cell Biology</h3>
+        <ul class="skill-list">
+          <li>Primary microglia &amp; astrocyte culture</li>
+          <li>Intestinal &amp; cerebral organoids</li>
+          <li>Immunofluorescence &amp; confocal imaging</li>
+          <li>TEER barrier integrity assays</li>
+          <li>Flow cytometry — immune phenotyping</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Immunology</h3>
+        <ul class="skill-list">
+          <li>Microglial activation assays (M1/M2)</li>
+          <li>T cell isolation &amp; stimulation</li>
+          <li>Cytokine profiling — ELISA, Luminex, ICS</li>
+          <li>Complement &amp; innate immune assays</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Animal Models</h3>
+        <ul class="skill-list">
+          <li>Germ-free, 5xFAD, MPTP mouse models</li>
+          <li>Gavage, i.p./i.v. injection, perfusion</li>
+          <li>FMT protocols</li>
+          <li>Behavioral assays — MWM, rotarod, OFT</li>
+          <li>Stereotaxic intracranial delivery</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Analytical &amp; Computational</h3>
+        <ul class="skill-list">
+          <li>16S rRNA-seq — microbiome profiling</li>
+          <li>Targeted metabolomics — GC-MS, LC-MS/MS</li>
+          <li>QIIME2, MaAsLin2 — microbiome analysis</li>
+          <li>R &amp; Python (basic) for data analysis</li>
+          <li>Anaerobic microbiology</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 5: CURRENT WORK ── -->
+  <section id="current">
+    <div class="section-label">Current work</div>
+    <h2>Dr. John Kirby's Lab — [University]</h2>
+    <p style="max-width:680px;color:var(--muted);margin-bottom:2rem;">My doctoral project addresses a central unresolved question in neurodegeneration research: which microbially derived signals are causally linked to neuroinflammatory activation, and through what molecular mechanisms do they operate?</p>
+
+    <div class="aims">
+      <div class="aim">
+        <div class="aim-num">1</div>
+        <div class="aim-body">
+          <h3>Metabolite-driven neuroinflammation mapping</h3>
+          <p>Systematic SCFA and secondary bile acid exposure in primary microglia and astrocytes. Bulk RNA-seq and Luminex multiplex profiling to build a metabolite–neuroinflammation atlas.</p>
+        </div>
+      </div>
+      <div class="aim">
+        <div class="aim-num">2</div>
+        <div class="aim-body">
+          <h3>Gut dysbiosis in neurodegeneration mouse models</h3>
+          <p>Antibiotic-mediated dysbiosis and FMT in 5xFAD and MPTP transgenic mice. Monitoring neuroinflammatory markers, synaptic integrity, and behavioral outcomes.</p>
+        </div>
+      </div>
+      <div class="aim">
+        <div class="aim-num">3</div>
+        <div class="aim-body">
+          <h3>Receptor and pathway identification</h3>
+          <p>Pharmacological antagonism and CRISPR-based receptor knockouts to identify the cognate receptor and downstream signaling cascade responsible for CNS effects of neuroimmune-active metabolites.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="questions">
+      <h3>Key scientific questions</h3>
+      <ul>
+        <li>Which bacterial metabolites consistently modulate microglial activation state, and through which receptors?</li>
+        <li>Does experimental gut dysbiosis accelerate protein aggregation or neuronal loss in AD/PD mouse models?</li>
+        <li>Can restoration of specific microbial metabolite profiles attenuate neuroinflammation in vivo?</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── SECTION 6: VISION ── -->
+  <section id="vision">
+    <div class="section-label">Research vision</div>
+    <h2>Long-term direction &amp; goals</h2>
+    <div class="vision-body">
+      <p>My long-term scientific vision is to develop a mechanistic framework for microbiome-informed neuroprotection — an evidence-based understanding of how gut microbial communities can be modulated to reduce neuroinflammation and slow neurodegenerative disease progression.</p>
+      <p>Beyond my PhD, I intend to pursue postdoctoral training with a strong translational and in vivo focus, where I can test microbiome-targeted intervention strategies — including targeted prebiotics, engineered probiotics, and synthetic metabolite analogs — in preclinical models with clear pathways toward clinical investigation.</p>
+      <p>The gut–brain axis is inherently a multi-system problem. Solving it will require collaboration across microbiology, neuroscience, immunology, pharmacology, and computational biology. I am particularly interested in integrating spatial transcriptomics and single-cell resolution analyses to understand how microbial signals shape the cellular heterogeneity of neuroinflammatory responses.</p>
+      <div class="impact">
+        "Neurodegenerative diseases affect tens of millions of people globally, and current pharmacological approaches address symptoms rather than disease mechanisms. If the gut–brain axis proves to be a tractable therapeutic target — and the emerging evidence strongly suggests it is — then the opportunity to modify the course of these diseases through accessible, microbiome-directed strategies is enormous."
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 7: CONNECT ── -->
+  <section id="connect">
+    <div class="section-label">Connect</div>
+    <h2>Let's collaborate</h2>
+    <div class="connect-grid">
+      <div class="connect-text">
+        <p>I welcome conversations with researchers, clinicians, and industry scientists whose work intersects with the gut–brain axis, microbiome biology, neuroinflammation, or neurodegenerative disease.</p>
+        <p>Whether you are interested in a potential collaboration, discussing complementary methodology, or simply exchanging ideas about the field, please do not hesitate to reach out.</p>
+        <p>I am also happy to connect with students or early-career researchers interested in this area of science.</p>
+      </div>
+      <div class="contact-box">
+        <div class="contact-name">[Your Full Name]</div>
+        <div class="contact-role">PhD Candidate · [Department] · [University]</div>
+        <a href="mailto:your.email@university.edu" class="contact-email">your.email@university.edu</a>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/yourprofile" class="social-link" target="_blank">
+            <span class="social-dot"></span> LinkedIn
+          </a>
+          <a href="https://scholar.google.com/citations?user=YOURID" class="social-link" target="_blank">
+            <span class="social-dot"></span> Google Scholar
+          </a>
+          <a href="https://orcid.org/0000-0000-0000-0000" class="social-link" target="_blank">
+            <span class="social-dot"></span> ORCID
+          </a>
+          <a href="https://www.researchgate.net/profile/Your-Name" class="social-link" target="_blank">
+            <span class="social-dot"></span> ResearchGate
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 [Your Name] · PhD Candidate · [University] · Built with GitHub Pages</p>
+</footer>
+
+</body>
+</html>
